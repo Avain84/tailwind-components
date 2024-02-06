@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind 第一階段功課</title>
+    <script
+      src="https://kit.fontawesome.com/81060961aa.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="src/output.css" />
+    <style>
+      #mobile-nav:checked ~ nav ul {
+        max-height: 500px;
+      }
+    </style>
+  </head>
+  <body class="p-10">
+    <div>
+      <!-- Button
+  可以參照 BS 設計按鈕的方式
+  需考慮的變化：size, color, rounded, with icons… 其他可以自己加
+  需考慮的狀態：focus, active, hover states -->
+      <h2 class="title bg-blue-200">Button按鈕</h2>
+      <div class="hand">
+        <h3 class="detail border-sky-300">全部樣式都寫在 class</h3>
+        <button
+          class="m-2 px-2 lg:px-3 py-1 lg:py-2 border rounded-lg lg:rounded-xl border-gray-600 bg-sky-600 text-base lg:text-lg text-white font-bold focus:bg-blue-400 hover:bg-blue-500 active:border-double active:border-4"
+        >
+          Button
+        </button>
+        <button
+          class="m-2 px-3 lg:px-4 py-2 lg:py-3 border rounded-xl lg:rounded-2xl border-gray-600 bg-sky-600 text-lg lg:text-xl text-white font-bold focus:bg-blue-400 hover:bg-blue-500 active:border-double active:border-4"
+        >
+          Button
+        </button>
+        <button
+          class="m-2 px-4 lg:px-5 py-3 lg:py-4 border rounded-2xl lg:rounded-3xl border-gray-600 bg-sky-600 text-xl lg:text-2xl text-white font-bold focus:bg-blue-400 hover:bg-blue-500 active:border-double active:border-4"
+        >
+          Button
+        </button>
+        <br />
+        <button
+          class="m-2 px-2 lg:px-3 py-1 lg:py-2 border rounded-lg lg:rounded-xl border-gray-600 bg-gray-300 text-base lg:text-lg text-gray-600 font-bold focus:bg-gray-400 hover:bg-gray-500 hover:text-white active:border-double active:border-4"
+        >
+          Button
+        </button>
+        <button
+          class="m-2 px-3 lg:px-4 py-2 lg:py-3 border rounded-xl lg:rounded-2xl border-gray-600 bg-gray-300 text-lg lg:text-xl text-gray-600 font-bold focus:bg-gray-400 hover:bg-gray-500 hover:text-white active:border-double active:border-4"
+        >
+          Button
+        </button>
+        <button
+          class="m-2 px-4 lg:px-5 py-3 lg:py-4 border rounded-2xl lg:rounded-3xl border-gray-600 bg-gray-300 text-xl lg:text-2xl text-gray-600 font-bold focus:bg-gray-400 hover:bg-gray-500 hover:text-white active:border-double active:border-4"
+        >
+          Button
+        </button>
+      </div>
+
+      <div class="tw">
+        <h3 class="detail border-sky-300">封裝樣式在 components</h3>
+        <button class="btn btn-primary btn-sm lg:btn-md">Button</button>
+        <button class="btn btn-primary btn-md lg:btn-lg">Button</button>
+        <button class="btn btn-primary btn-lg lg:btn-xl">Button</button>
+        <br />
+        <button class="btn btn-secondary btn-sm lg:btn-md">Button</button>
+        <button class="btn btn-secondary btn-md lg:btn-lg">Button</button>
+        <button class="btn btn-secondary btn-lg lg:btn-xl">Button</button>
+      </div>
+    </div>
+
+    <div>
+      <!-- Input / Textarea / Radio / Checkbox
+    做出 placeholder, border, outline, disabled, focus… 其他可以自己加 -->
+      <h2 class="title bg-red-200">Input / Textarea / Radio / Checkbox</h2>
+      <div class="hand">
+        <!-- <h3 class="detail border-pink-300">全部樣式都寫在 class</h3> -->
+        <label for="input" class="block detail border-pink-300"
+          >input輸入框</label
+        >
+        <input
+          id="input"
+          type="text"
+          placeholder="Search..."
+          class="w-3/4 placeholder:lg:text-xl placeholder:font-mono placeholder:font-bold placeholder:text-slate-400 border-2 lg:border-4 rounded-xl m-2 px-5 lg:px-8 py-3 lg:py-5 outline-none focus:border-4 focus:lg:border-8"
+        />
+
+        <label for="textArea" class="block detail border-pink-300"
+          >textarea文字框</label
+        >
+        <textarea
+          name=""
+          id="textArea"
+          cols="50"
+          rows="5"
+          placeholder="請輸入描述"
+          class="placeholder:lg:text-xl placeholder:font-bold placeholder:text-slate-400 border-2 lg:border-4 rounded-xl m-2 p-4 lg:p-6 outline-none focus:border-4 focus:lg:border-8"
+        ></textarea>
+
+        <h3 class="block detail border-pink-300">checkbox</h3>
+        <input type="checkbox" name="" id="checkbox1" class="m-4" />
+        <label for="checkbox1" class="font-bold md:text-lg lg:text-xl"
+          >點我</label
+        >
+        <br />
+        <input type="checkbox" name="" id="checkbox2" class="m-4" disabled />
+        <label for="checkbox2" class="md:text-lg lg:text-xl">不要點我</label>
+        <label for="textArea" class="block detail border-pink-300">radio</label>
+        <input
+          type="radio"
+          name="age"
+          id="child"
+          class="m-4 checked:w-5 checked:h-5 checked:accent-pink-400"
+        /><label for="child" class="md:text-lg lg:text-xl">18以下</label>
+        <br />
+        <input
+          type="radio"
+          name="age"
+          id="adult"
+          class="m-4 checked:w-5 checked:h-5 checked:accent-pink-400"
+        /><label for="adult" class="md:text-lg lg:text-xl">18~65</label>
+        <br />
+        <input
+          type="radio"
+          name="age"
+          id="elder"
+          class="m-4 checked:w-5 checked:h-5 checked:accent-pink-400"
+        /><label for="elder" class="md:text-lg lg:text-xl">65以上</label>
+      </div>
+    </div>
+
+    <div>
+      <!-- Navbar -->
+      <h2 class="mb-10 title bg-green-200">Navbar</h2>
+      <input type="checkbox" name="" id="mobile-nav" class="hidden" />
+
+      <nav
+        class="p-3 h-20 bg-green-800 flex justify-between items-center relative"
+      >
+        <label
+          for="mobile-nav"
+          class="relative md:hidden w-10 h-10 rounded-lg hover:bg-green-700 cursor-pointer"
+        >
+          <span
+            class="before:contents-[''] before:absolute before:w-2/4 before:h-1 before:bg-white before:top-1/3 before:left-1/4 before:contents-[''] after:absolute after:w-2/4 after:h-1 after:bg-white after:bottom-1/3 after:left-1/4"
+          ></span>
+        </label>
+        <ul
+          class="md:hidden max-h-0 overflow-hidden transition-all duration-500 absolute top-20 left-0 right-0 text-2xl font-bold text-white bg-green-500"
+        >
+          <li class="nav-hover border-b-2 border-white">
+            <a href="#" class="text-center block w-full py-3">首頁</a>
+          </li>
+          <li class="nav-hover border-b-2 border-white">
+            <a href="#" class="text-center block w-full py-3">商品介紹</a>
+          </li>
+          <li class="nav-hover">
+            <a href="#" class="text-center block w-full py-3">聯絡我們</a>
+          </li>
+        </ul>
+        <a href="https://tailwindcss.com/" class="h-full">
+          <img
+            class="h-full w-auto"
+            src="https://pic.vsixhub.com/01/c9/4db62a7c-7d70-419c-96d2-6c3a4dc77ea5-logo-20230818.webp"
+            alt="Tailwind icon"
+          />
+        </a>
+        <ul class="hidden h-full md:flex gap-4 text-2xl font-bold text-white">
+          <li class="flex items-center">
+            <a href="#" class="nav-hover py-3 px-2 rounded-lg">首頁</a>
+          </li>
+          <li class="flex items-center">
+            <a href="#" class="nav-hover py-3 px-2 rounded-lg">商品介紹</a>
+          </li>
+          <li class="flex items-center">
+            <a href="#" class="nav-hover py-3 px-2 rounded-lg">聯絡我們</a>
+          </li>
+        </ul>
+        <div class="logout w-10 h-10">
+          <i
+            class="fa-solid fa-arrow-right-from-bracket text-4xl text-white hover:text-green-300"
+          ></i>
+        </div>
+      </nav>
+    </div>
+  </body>
+</html>
